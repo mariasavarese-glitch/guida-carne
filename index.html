@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guida completa sulla carne — Scienze degli Alimenti</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --surface2: #f5f1ea;
+    --border: #e0d8cc;
+    --border2: #ccc4b4;
+    --text: #1c1a16;
+    --text2: #5a5040;
+    --text3: #8a7d6a;
+    --accent: #8b2e14;
+    --accent2: #c04a20;
+    --gold: #b5862a;
+    --gold2: #d4a43e;
+    --teal: #1a6b58;
+    --teal2: #e8f5f0;
+    --blue: #1a4a7a;
+    --blue2: #e8f0f8;
+    --red: #8b2020;
+    --red2: #fdf0f0;
+    --amber: #7a4a10;
+    --amber2: #fdf5e8;
+    --gray2: #f0ece4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(255,255,255,0.03) 20px,
+      rgba(255,255,255,0.03) 40px
+    );
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  header p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    font-style: italic;
+    position: relative;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  nav a {
+    display: inline-block;
+    padding: 0.9rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text2);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    font-family: 'Source Serif 4', serif;
+  }
+  nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent2);
+  }
+
+  /* LAYOUT */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* SECTION */
+  section {
+    margin-bottom: 3.5rem;
+    scroll-margin-top: 60px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-num {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .card p, .card li {
+    font-size: 0.92rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+  .card ul { padding-left: 1.4rem; }
+  .card li { margin-bottom: 0.25rem; }
+
+  .card-accent-left {
+    border-left: 4px solid var(--gold);
+  }
+  .card-accent-red {
+    border-left: 4px solid var(--accent);
+  }
+  .card-accent-teal {
+    border-left: 4px solid var(--teal);
+  }
+  .card-accent-blue {
+    border-left: 4px solid var(--blue);
+  }
+
+  /* GRID */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.75rem; }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 2px 3px 2px 0;
+    letter-spacing: 0.03em;
+    font-family: 'Source Serif 4', serif;
+    font-style: normal;
+  }
+  .b-red { background: var(--red2); color: var(--red); border: 1px solid #f0c0c0; }
+  .b-white { background: var(--gray2); color: #4a3f2f; border: 1px solid #d5cfc5; }
+  .b-dark { background: #2a2520; color: #c5bcb0; border: 1px solid #3a3028; }
+  .b-amber { background: var(--amber2); color: var(--amber); border: 1px solid #e8d0a0; }
+  .b-teal { background: var(--teal2); color: var(--teal); border: 1px solid #b0ddd0; }
+  .b-blue { background: var(--blue2); color: var(--blue); border: 1px solid #b0c8e8; }
+  .b-gold { background: #fdf8ee; color: var(--gold); border: 1px solid #e8d090; }
+
+  /* TABLES */
+  .tbl-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  thead tr {
+    background: var(--accent);
+    color: #fff;
+  }
+  thead th {
+    padding: 11px 14px;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tbody tr:nth-child(even) td { background: var(--surface2); }
+  tbody tr:hover td { background: #f8f3eb; }
+
+  /* PRO/CON */
+  .pro-con { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .pro {
+    background: #f2faf0;
+    border: 1px solid #b8ddb0;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+  .con {
+    background: var(--red2);
+    border: 1px solid #f0b8b8;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+  .pro .lbl { font-size: 0.8rem; font-weight: 600; color: #2a6020; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .con .lbl { font-size: 0.8rem; font-weight: 600; color: var(--red); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .pro li, .con li { font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.2rem; }
+  .pro li { color: #254a1e; }
+  .con li { color: #6a1818; }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; gap: 0.6rem; }
+  .step { display: flex; gap: 14px; align-items: flex-start; }
+  .step-n {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-family: 'Playfair Display', serif;
+  }
+  .step-body { font-size: 0.9rem; color: var(--text2); line-height: 1.6; padding-top: 4px; }
+  .step-body strong { color: var(--text); }
+
+  /* COLOR BAR CARDS */
+  .meat-card {
+    border-radius: 10px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .meat-card .color-bar {
+    height: 6px;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+  }
+  .meat-card .ct { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .meat-card p { font-size: 0.85rem; color: var(--text2); }
+
+  /* INFO ROW */
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+  }
+  .info-row:last-child { border-bottom: none; }
+  .info-key { color: var(--text3); }
+  .info-val { font-weight: 600; color: var(--text); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border2), transparent);
+    margin: 2rem 0;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--amber2);
+    border: 1px solid #e8c870;
+    border-left: 5px solid var(--gold2);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #4a3010;
+  }
+  .callout strong { color: var(--amber); }
+
+  /* UMIDITY HIGHLIGHT */
+  .umidity-cell {
+    background: #e8f4fc !important;
+    color: #1a4a7a !important;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: var(--text3);
+    border-top: 1px solid var(--border);
+    font-style: italic;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    header h1 { font-size: 1.6rem; }
+    .grid2, .grid3, .grid4, .pro-con { grid-template-columns: 1fr; }
+    nav a { font-size: 0.72rem; padding: 0.7rem 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>La Carne — Guida completa</h1>
+  <p>Scienze degli Alimenti · Definizione, tagli, nutrizione, conservazione, salumi e prosciutti</p>
+</header>
+
+<nav>
+  <a href="#s1">Definizione</a>
+  <a href="#s2">Colore</a>
+  <a href="#s3">Tagli</a>
+  <a href="#s4">Nutrienti</a>
+  <a href="#s5">Frollatura</a>
+  <a href="#s6">Conservazione</a>
+  <a href="#s7">Cottura</a>
+  <a href="#s8">Salumi</a>
+  <a href="#s9">Prosciutto</a>
+  <a href="#s10">Etichetta</a>
+  <a href="#s11">DOP</a>
+  <a href="#s12">Prosciutto cotto</a>
+</nav>
+
+<main>
+
+  <!-- ─── 1. DEFINIZIONE ─── -->
+  <section id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">Definizione e tessuti della carne</div>
+    </div>
+
+    <div class="card card-accent-red">
+      <div class="card-title">Che cos'è la carne?</div>
+      <p>Con il termine <strong>carne</strong> si intende la parte commestibile degli animali macellati, comprensiva di tessuto muscolare, connettivo, adiposo e nervoso. In senso stretto si riferisce principalmente alla <strong>muscolatura scheletrica striata</strong>.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Animali di provenienza</div>
+      <span class="badge b-red">Bovino (manzo/vitello)</span>
+      <span class="badge b-red">Suino (maiale)</span>
+      <span class="badge b-amber">Ovino (agnello/montone)</span>
+      <span class="badge b-amber">Caprino</span>
+      <span class="badge b-white">Coniglio</span>
+      <span class="badge b-white">Pollo / Tacchino / Anatra</span>
+      <span class="badge b-teal">Cavallo / Asino</span>
+      <span class="badge b-dark">Selvaggina (cinghiale, cervo, capriolo)</span>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Tessuto muscolare</div>
+        <p>Componente principale. Formato da fibre muscolari contenenti <em>actina</em> e <em>miosina</em>, le proteine contrattili. Determina struttura e consistenza della carne.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Tessuto connettivo</div>
+        <p>Avvolge e separa le fibre muscolari. Contiene <em>collagene</em> ed <em>elastina</em>. Con la cottura il collagene si trasforma in gelatina, ammorbidendo la carne. Più connettivo → carne più dura.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Tessuto adiposo</div>
+        <p>Il grasso, distribuito tra le fibre (<em>marezzatura</em>) o sottocutaneo. Contribuisce al sapore (aromi liposolubili), alla succosità e alla tenerezza.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Tessuto nervoso e osseo</div>
+        <p>Presenti in quantità variabile. Il midollo osseo è ricco di lipidi. I nervi sono componenti minori, rimossi nella lavorazione.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 2. COLORE ─── -->
+  <section id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">Il colore della carne</div>
+    </div>
+
+    <div class="card card-accent-left">
+      <div class="card-title">Da cosa dipende il colore?</div>
+      <p>Il colore è determinato principalmente dalla <strong>mioglobina</strong>, proteina che immagazzina ossigeno nel muscolo. Più mioglobina → colore più scuro. Il colore varia in base allo stato ossidativo del ferro (Fe):</p>
+      <ul style="margin-top:0.75rem;">
+        <li><strong>Oximioglobina</strong> (O₂ legato, Fe²⁺) → rosso vivo — carne fresca esposta all'aria</li>
+        <li><strong>Deossimioglobina</strong> (senza O₂, Fe²⁺) → rosso porpora — carne sottovuoto</li>
+        <li><strong>Metamioglobina</strong> (Fe³⁺ ossidato) → marrone/grigio — carne deteriorata o cotta</li>
+      </ul>
+    </div>
+
+    <div class="grid3">
+      <div class="meat-card">
+        <div class="color-bar" style="background: #e8e0d8;"></div>
+        <div class="ct">Carni bianche</div>
+        <p>Bassa concentrazione di mioglobina. Animali giovani o sedentari.</p>
+        <div style="margin-top:0.75rem;">
+          <span class="badge b-white">Pollo</span>
+          <span class="badge b-white">Tacchino</span>
+          <span class="badge b-white">Coniglio</span>
+          <span class="badge b-white">Vitello</span>
+          <span class="badge b-white">Maiale (in parte)</span>
+        </div>
+      </div>
+      <div class="meat-card">
+        <div class="color-bar" style="background: #c0402a;"></div>
+        <div class="ct">Carni rosse</div>
+        <p>Alta concentrazione di mioglobina. Muscoli molto usati o animali adulti.</p>
+        <div style="margin-top:0.75rem;">
+          <span class="badge b-red">Manzo</span>
+          <span class="badge b-red">Cavallo</span>
+          <span class="badge b-red">Agnello adulto</span>
+          <span class="badge b-red">Maiale (tagli scuri)</span>
+        </div>
+      </div>
+      <div class="meat-card">
+        <div class="color-bar" style="background: #2a2218;"></div>
+        <div class="ct">Carni nere</div>
+        <p>Selvaggina, con elevatissimo contenuto di mioglobina. Colore molto scuro.</p>
+        <div style="margin-top:0.75rem;">
+          <span class="badge b-dark">Cinghiale</span>
+          <span class="badge b-dark">Cervo</span>
+          <span class="badge b-dark">Capriolo</span>
+          <span class="badge b-dark">Faraona</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. TAGLI ─── -->
+  <section id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">Tagli di carne e quinto quarto</div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Caratteristiche</th>
+            <th>Esempi (bovino)</th>
+            <th>Cottura consigliata</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge b-teal">1ª categoria</span></td>
+            <td>Poco connettivo, muscoli poco usati, teneri</td>
+            <td>Filetto, controfiletto, lombata, scamone, fesa, noce</td>
+            <td>Griglia, padella (breve)</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-amber">2ª categoria</span></td>
+            <td>Medio connettivo, discreta tenerezza</td>
+            <td>Spalla, paletta, reale, girello</td>
+            <td>Arrosto, brasato</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-red">3ª categoria</span></td>
+            <td>Molto connettivo, muscoli molto usati, duri</td>
+            <td>Geretto, pancia, collo, muscolo, codone</td>
+            <td>Bollito, stufato, cottura lenta</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>Il quinto quarto</strong> — L'animale macellato viene tradizionalmente diviso in quattro quarti (due anteriori + due posteriori). Il <strong>quinto quarto</strong> è tutto ciò che rimane: frattaglie (fegato, reni, cuore, polmone, milza, cervello, lingua, trippa, animelle) e parti meno nobili. Molto usato nella cucina povera italiana (es. trippa alla romana, coda alla vaccinara). Ricco di nutrienti ma con contenuto lipidico variabile.
+    </div>
+  </section>
+
+  <!-- ─── 4. NUTRIENTI ─── -->
+  <section id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Nutrienti e aspetti per la salute</div>
+    </div>
+
+    <div class="grid4" style="margin-bottom:1rem;">
+      <div class="card">
+        <div class="card-title">Proteine</div>
+        <p>15–22%, ad alto valore biologico, con tutti gli amminoacidi essenziali.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Lipidi</div>
+        <p>Variabili (2–30%). Grassi saturi e colesterolo. La carne bianca è più magra.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Micronutrienti</div>
+        <p>Ferro eme (altamente assorbibile), zinco, fosforo, vit. B12, B6, niacina, riboflavina.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Acqua e glucidi</div>
+        <p>Acqua: 60–75%. Glucidi: tracce (glicogeno). Nessuna fibra alimentare.</p>
+      </div>
+    </div>
+
+    <div class="pro-con">
+      <div class="pro">
+        <div class="lbl">✓ Aspetti positivi</div>
+        <ul>
+          <li>Proteine complete ad alto valore biologico</li>
+          <li>Ferro eme molto biodisponibile</li>
+          <li>Vitamina B12 (assente nei vegetali)</li>
+          <li>Zinco essenziale per il sistema immunitario</li>
+          <li>Sazietà elevata</li>
+        </ul>
+      </div>
+      <div class="con">
+        <div class="lbl">✗ Aspetti negativi / rischi</div>
+        <ul>
+          <li>Grassi saturi e colesterolo → rischio cardiovascolare</li>
+          <li>Carne rossa lavorata: cancerogena gruppo 1 (IARC)</li>
+          <li>Carne rossa non lavorata: possibilmente cancerogena (gruppo 2A)</li>
+          <li>Nitrati/nitriti nei salumi → nitrosammine</li>
+          <li>Elevato contenuto di sodio nei salumi</li>
+          <li>Elevato impatto ambientale (allevamento)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. FROLLATURA ─── -->
+  <section id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">La frollatura</div>
+    </div>
+
+    <div class="card card-accent-left">
+      <div class="card-title">Che cos'è?</div>
+      <p>La <strong>frollatura</strong> (o <em>maturation</em>) è il periodo di riposo della carne dopo la macellazione durante il quale avvengono trasformazioni biochimiche che migliorano tenerezza, sapore e aroma. Si effettua in celle frigorifere a <strong>0–4°C</strong> con umidità relativa <strong>75–85%</strong>.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fasi e modificazioni principali</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div class="step-body"><strong>Rigor mortis:</strong> le riserve di ATP si esauriscono, actina e miosina si legano formando actomiosina. La carne diventa rigida e dura. Inizia 2–6h dopo la macellazione, dura 24–48h.</div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div class="step-body"><strong>Risoluzione del rigor:</strong> enzimi proteolitici endogeni (calpastatine, catepsine) degradano le proteine strutturali (titina, nebulina). La carne diventa progressivamente più tenera.</div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div class="step-body"><strong>Proteolisi:</strong> continua degradazione delle proteine miofibrillari. Le fibre si frammentano, aumentando la tenerezza. Crescono gli amminoacidi liberi (sapore umami).</div>
+        </div>
+        <div class="step">
+          <div class="step-n">4</div>
+          <div class="step-body"><strong>Modifiche del pH:</strong> il glicogeno si converte in acido lattico → pH da ~7 a ~5,4–5,8. Il pH acido favorisce le catepsine e inibisce la crescita batterica.</div>
+        </div>
+        <div class="step">
+          <div class="step-n">5</div>
+          <div class="step-body"><strong>Sviluppo del flavour:</strong> produzione di nucleotidi (IMP, inosina, ipoxantina), peptidi, amminoacidi liberi e composti volatili → tipico aroma della carne frollata.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card card-accent-teal">
+        <div class="card-title">Wet aging (umido / sottovuoto)</div>
+        <p>Carne confezionata sottovuoto. Minor perdita di peso, minor sviluppo aromatico. Più comune a livello industriale. Durata: <strong>2–4 settimane</strong>.</p>
+      </div>
+      <div class="card card-accent-red">
+        <div class="card-title">Dry aging (a secco)</div>
+        <p>Carne esposta all'aria in cella frigorifera. Maggior perdita di acqua (concentrazione del sapore), crosta esterna da rimuovere. Sapore più intenso. Durata: <strong>21–90+ giorni</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. CONSERVAZIONE ─── -->
+  <section id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Manipolazione e conservazione della carne</div>
+    </div>
+
+    <div class="card card-accent-red">
+      <div class="card-title">Procedure corrette di manipolazione</div>
+      <ul>
+        <li>Lavarsi le mani prima e dopo il contatto con la carne cruda</li>
+        <li>Usare taglieri separati per carne cruda e altri alimenti (rischio cross-contaminazione)</li>
+        <li>Controllare sempre la catena del freddo durante il trasporto</li>
+        <li>Rispettare le date di scadenza e le indicazioni di conservazione in etichetta</li>
+        <li>Non lasciare mai la carne cruda a temperatura ambiente per più di 30 minuti</li>
+      </ul>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">🌡 Refrigerazione</div>
+        <div class="info-row"><span class="info-key">Temperatura</span><span class="info-val">0 – 4°C</span></div>
+        <div class="info-row"><span class="info-key">Carne fresca intera</span><span class="info-val">3–5 giorni</span></div>
+        <div class="info-row"><span class="info-key">Carne macinata</span><span class="info-val">1–2 giorni</span></div>
+        <div class="info-row"><span class="info-key">Frattaglie</span><span class="info-val">1–2 giorni</span></div>
+        <div class="info-row"><span class="info-key">Pollame</span><span class="info-val">2–3 giorni</span></div>
+        <p style="font-size:0.82rem; margin-top:0.75rem; color:var(--text3); font-style:italic;">Conservare nella parte più fredda del frigo (ripiano basso), coperta o in contenitore chiuso, lontano da alimenti pronti al consumo.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">❄ Tempi massimi di congelamento</div>
+        <div class="info-row"><span class="info-key">Temperatura</span><span class="info-val">≤ −18°C</span></div>
+        <div class="info-row"><span class="info-key">Carne bovina</span><span class="info-val">6–12 mesi</span></div>
+        <div class="info-row"><span class="info-key">Carne macinata</span><span class="info-val">2–3 mesi</span></div>
+        <div class="info-row"><span class="info-key">Pollame</span><span class="info-val">9–12 mesi</span></div>
+        <div class="info-row"><span class="info-key">Frattaglie</span><span class="info-val">3–4 mesi</span></div>
+        <div class="info-row"><span class="info-key">Carne suina</span><span class="info-val">4–6 mesi</span></div>
+      </div>
+    </div>
+
+    <!-- PROCEDURA CONGELAMENTO -->
+    <div class="card" style="border-top: 4px solid #1a4a7a; margin-top:0.5rem;">
+      <div class="card-title" style="color:var(--blue);">❄ Procedura corretta di congelamento — passo per passo</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n" style="background:var(--blue);">1</div>
+          <div class="step-body"><strong>Congela solo carne fresca:</strong> non congelare carne che si avvicina alla scadenza o che ha già cambiato colore. Prima si congela, meglio si conserva.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--blue);">2</div>
+          <div class="step-body"><strong>Dividi in porzioni piccole:</strong> porziona la carne nelle quantità che userai in una volta (es. 1–2 bistecche, 300 g di macinato). Pezzi piccoli congelano più velocemente → cristalli di ghiaccio più piccoli → meno danni alle fibre muscolari.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--blue);">3</div>
+          <div class="step-body"><strong>Asciuga la superficie:</strong> tampona la carne con carta da cucina prima di confezionarla. L'umidità in eccesso forma cristalli superficiali che peggiorano la qualità.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--blue);">4</div>
+          <div class="step-body"><strong>Confeziona eliminando l'aria:</strong> usa sacchetti per alimenti appositi, pellicola per alimenti a contatto diretto oppure contenitori ermetici. Espelli tutta l'aria possibile per evitare il <em>freezer burn</em> (bruciatura da congelatore: macchie grigio-bianche sulla superficie, carne secca e insipida).</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--blue);">5</div>
+          <div class="step-body"><strong>Etichetta sempre:</strong> scrivi sull'etichetta il <strong>tipo di carne</strong>, il <strong>taglio</strong> (es. "fettine di pollo", "macinato bovino") e soprattutto la <strong>data di congelamento</strong>. Senza data non sai per quanto tempo è rimasta nel freezer.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--blue);">6</div>
+          <div class="step-body"><strong>Congela rapidamente:</strong> metti la carne nella zona più fredda del congelatore (non sovraccaricare il freezer). Se disponibile, usa la funzione <em>fast freeze</em> (congelamento rapido). Ideale: abbattitore a −40°C.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--blue);">7</div>
+          <div class="step-body"><strong>Non ricongelare:</strong> una volta scongelata, la carne non va mai ricongelata cruda. Si possono congelare prodotti cotti ottenuti da carne precedentemente scongelata (es. polpette cotte).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCEDURA SCONGELAMENTO -->
+    <div class="card" style="border-top: 4px solid var(--teal); margin-top:0.5rem;">
+      <div class="card-title" style="color:var(--teal);">🌡 Procedura corretta di scongelamento — passo per passo</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n" style="background:var(--teal);">1</div>
+          <div class="step-body"><strong>MAI a temperatura ambiente:</strong> scongelare la carne sul piano della cucina è pericoloso. La superficie esterna raggiunge temperature favorevoli alla proliferazione batterica (zona di pericolo: 4–60°C) mentre l'interno è ancora ghiacciato.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--teal);">2</div>
+          <div class="step-body"><strong>Metodo 1 — In frigorifero (migliore):</strong> trasferisci la carne dal freezer al ripiano basso del frigorifero il giorno prima. Lo scongelamento lento a 0–4°C è il metodo più sicuro e quello che preserva meglio la qualità. Tempi: fettine sottili 12–24h, arrosti grandi 24–48h.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--teal);">3</div>
+          <div class="step-body"><strong>Metodo 2 — In acqua fredda corrente:</strong> metti la carne nel suo sacchetto chiuso sotto un filo di acqua fredda corrente. Più veloce del frigorifero (30–60 min per porzioni piccole). L'acqua deve essere fredda, mai calda.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--teal);">4</div>
+          <div class="step-body"><strong>Metodo 3 — Al microonde (solo se si cucina subito):</strong> usa la funzione "scongelamento" del microonde solo se la carne verrà cucinata immediatamente. Il microonde scalda in modo non uniforme: alcune zone possono iniziare a cuocere mentre altre sono ancora congelate.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--teal);">5</div>
+          <div class="step-body"><strong>Raccogli il liquido di scongelamento (drip):</strong> il liquido rosa che fuoriesce contiene acqua, proteine e succhi cellulari. Elimina questo liquido e non usarlo per condire. Asciuga la carne prima di cuocerla.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="background:var(--teal);">6</div>
+          <div class="step-body"><strong>Cuoci entro 24 ore dallo scongelamento:</strong> la carne scongelata in frigorifero può restare al freddo al massimo 1–2 giorni prima di essere cotta. Non rimettere in frigo a lungo una volta scongelata.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-accent-left" style="margin-top:0.5rem;">
+      <div class="card-title">Perché il congelamento lento danneggia la carne? (il drip loss)</div>
+      <p>Durante il <strong>congelamento lento</strong>, l'acqua intracellulare forma <strong>cristalli di ghiaccio grandi</strong> che rompono le membrane cellulari. Al disgelo si ha <em>drip loss</em> (perdita di succo): fuoriuscita di acqua, proteine e nutrienti. La carne risulta asciutta, meno saporita e con perdita di peso. Il <strong>congelamento rapido</strong> (abbattimento a −40°C) forma cristalli molto piccoli che danneggiano meno la struttura, preservando qualità e succulenza.</p>
+    </div>
+  </section>
+
+  <!-- ─── 7. COTTURA ─── -->
+  <section id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">Salatura e cottura della carne</div>
+    </div>
+
+    <div class="card card-accent-left">
+      <div class="card-title">Cosa succede durante la salatura di una bistecca?</div>
+      <div class="steps" style="margin-top:0.5rem;">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div class="step-body"><strong>Osmosi iniziale (0–10 min):</strong> il sale crea un gradiente osmotico e richiama i liquidi fuori dalla carne → velo di umidità in superficie.</div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div class="step-body"><strong>Dissoluzione e diffusione (10–40 min):</strong> il sale si scioglie nei succhi fuoriusciti e inizia a diffondersi per osmosi inversa all'interno della carne.</div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div class="step-body"><strong>Riassorbimento (40+ min):</strong> il sale penetrato denatura parzialmente le proteine, che trattengono meglio l'acqua. La carne si re-idrata, diventa più tenera e saporita. Salatura anticipata (almeno 40–60 min, idealmente 24h) = risultato ottimale.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cosa succede durante la cottura?</div>
+      <div class="steps" style="margin-top:0.5rem;">
+        <div class="step">
+          <div class="step-n" style="font-size:0.65rem;">40–50</div>
+          <div class="step-body"><strong>Denaturazione proteica iniziale:</strong> le proteine sarcoplasmatiche (mioglobina) iniziano a denaturarsi. Il colore cambia da rosso a grigio/marrone.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="font-size:0.65rem;">50–60</div>
+          <div class="step-body"><strong>Contrazione delle fibre:</strong> actina e miosina si contraggono, espellendo acqua. La carne diventa più dura e perde succhi.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="font-size:0.65rem;">60–70</div>
+          <div class="step-body"><strong>Reazione di Maillard:</strong> in superficie, amminoacidi + zuccheri riducenti formano centinaia di composti aromatici bruni (crosta). Fondamentale per sapore e colore esterno.</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="font-size:0.65rem;">70–80</div>
+          <div class="step-body"><strong>Conversione del collagene:</strong> il collagene del tessuto connettivo si idrolizza in gelatina. La carne diventa tenera e succulenta in cotture lunghe (brasato, bollito).</div>
+        </div>
+        <div class="step">
+          <div class="step-n" style="font-size:0.65rem;">&gt;80</div>
+          <div class="step-body"><strong>Cottura prolungata:</strong> ulteriore disidratazione e perdita di succhi. La carne può diventare stopposa se priva di sufficiente connettivo o grasso.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 8. SALUMI ─── -->
+  <section id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title">I salumi: definizione, ingredienti e classificazione</div>
+    </div>
+
+    <div class="card card-accent-red">
+      <div class="card-title">Che cos'è un salume?</div>
+      <p>I <strong>salumi</strong> sono prodotti a base di carne (prevalentemente suina) sottoposta a processi di conservazione: salatura, stagionatura, affumicatura, cottura o fermentazione. Il termine deriva da <em>sale</em>, ingrediente fondamentale.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-title">Ingredienti principali e loro funzione</div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ingrediente</th>
+              <th>Funzione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Sale (NaCl)</strong></td><td>Conservante (riduce aw), esaltatore di sapore, favorisce la disidratazione, inibisce la crescita microbica</td></tr>
+            <tr><td><strong>Nitriti (E249, E250) e Nitrati (E251, E252)</strong></td><td>Conservanti antimicrobici (anti-Clostridium botulinum), stabilizzano il colore rosso (nitrosomioglobina), conferiscono sapore tipico</td></tr>
+            <tr><td><strong>Zuccheri (saccarosio, destrosio)</strong></td><td>Substrato per i batteri lattici (fermentazione), correttori di sapore, favoriscono la reazione di Maillard in cottura</td></tr>
+            <tr><td><strong>Spezie e aromi</strong></td><td>Pepe, aglio, noce moscata, chiodi di garofano, finocchio: conferiscono il profilo aromatico caratteristico</td></tr>
+            <tr><td><strong>Starter batterici</strong></td><td>Lattobacilli, pediococchi: fermentazione controllata, abbassamento pH, sicurezza microbiologica</td></tr>
+            <tr><td><strong>Antiossidanti</strong></td><td>Acido ascorbico (E300), ascorbato di sodio: prevengono l'ossidazione dei lipidi e stabilizzano il colore</td></tr>
+            <tr><td><strong>Budello (naturale o artificiale)</strong></td><td>Involucro che dà forma, regola gli scambi di acqua e ossigeno durante la stagionatura</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Classificazione per trattamento termico</div>
+        <ul>
+          <li><strong>Crudi:</strong> prosciutto crudo, bresaola, coppa, lardo, pancetta, guanciale</li>
+          <li><strong>Cotti:</strong> prosciutto cotto, mortadella, wurstel, zampone, cotechino</li>
+          <li><strong>Affumicati:</strong> speck, alcuni tipi di salsiccia</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Classificazione per struttura</div>
+        <ul>
+          <li><strong>Interi:</strong> prosciutto, bresaola, speck</li>
+          <li><strong>A pezzi macinati:</strong> salame, salsiccia, coppa</li>
+          <li><strong>Emulsionati / tritati finemente:</strong> mortadella, wurstel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 9. PROSCIUTTO ─── -->
+  <section id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title">Produzione del prosciutto crudo e del prosciutto cotto</div>
+    </div>
+
+    <div class="grid2">
+      <div class="card" style="border-top: 4px solid var(--accent);">
+        <div class="card-title">Prosciutto crudo — fasi di produzione</div>
+        <div class="steps">
+          <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Selezione coscia:</strong> coscia suina fresca con piedino, controllata per peso e qualità.</div></div>
+          <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Rifilatura:</strong> eliminazione del grasso in eccesso e della cotenna per dare la forma caratteristica.</div></div>
+          <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Salagione:</strong> sfregatura con sale marino secco, a mano o meccanicamente. Ripetuta più volte in 2–4 settimane.</div></div>
+          <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Riposo / Dissalatura:</strong> la coscia riposa in cella frigorifera per distribuire uniformemente il sale ed eliminare l'eccesso.</div></div>
+          <div class="step"><div class="step-n">5</div><div class="step-body"><strong>Lavaggio e asciugatura:</strong> lavaggio con acqua tiepida, poi asciugatura in celle ventilate.</div></div>
+          <div class="step"><div class="step-n">6</div><div class="step-body"><strong>Pre-stagionatura:</strong> 2–3 mesi in locali freschi e ventilati. Inizio dello sviluppo aromatico.</div></div>
+          <div class="step"><div class="step-n">7</div><div class="step-body"><strong>Sugnatura:</strong> applicazione di sugna (grasso suino), sale e pepe sulla parte muscolare scoperta per evitare essiccamento eccessivo.</div></div>
+          <div class="step"><div class="step-n">8</div><div class="step-body"><strong>Stagionatura:</strong> 10–24+ mesi in cantine con ventilazione naturale. Lipolisi e proteolisi → sapore, aroma, consistenza tipici.</div></div>
+          <div class="step"><div class="step-n">9</div><div class="step-body"><strong>Spillatura:</strong> un esperto introduce un ago di osso di cavallo nella coscia per verificare l'aroma.</div></div>
+          <div class="step"><div class="step-n">10</div><div class="step-body"><strong>Marchiatura e certificazione (DOP):</strong> apposizione del marchio a fuoco o timbro.</div></div>
+        </div>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--blue);">
+        <div class="card-title">Prosciutto cotto — fasi di produzione</div>
+        <div class="steps">
+          <div class="step"><div class="step-n">1</div><div class="step-body"><strong>Selezione coscia:</strong> coscia suina fresca, disossata totalmente o parzialmente.</div></div>
+          <div class="step"><div class="step-n">2</div><div class="step-body"><strong>Rifilatura:</strong> eliminazione cotenna, grasso in eccesso, tendini.</div></div>
+          <div class="step"><div class="step-n">3</div><div class="step-body"><strong>Iniezione salamoia e zangolatura:</strong> la salamoia (acqua, sale, nitriti, zuccheri, aromi) è iniettata tramite aghi multipli. La coscia è poi massaggiata in zangola (tamburo rotante) per distribuire la salamoia e ammorbidire le fibre.</div></div>
+          <div class="step"><div class="step-n">4</div><div class="step-body"><strong>Modellatura:</strong> la coscia è inserita in stampi per darle la forma tipica.</div></div>
+          <div class="step"><div class="step-n">5</div><div class="step-body"><strong>Cottura:</strong> a vapore o in acqua a 68–75°C al cuore per almeno 30–60 minuti (pastorizzazione). Garantisce sicurezza microbiologica.</div></div>
+          <div class="step"><div class="step-n">6</div><div class="step-body"><strong>Raffreddamento rapido:</strong> abbattimento immediato per bloccare la crescita batterica.</div></div>
+          <div class="step"><div class="step-n">7</div><div class="step-body"><strong>Affettatura e confezionamento:</strong> in atmosfera modificata o sottovuoto.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 10. ETICHETTA ─── -->
+  <section id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title">Etichettatura della carne</div>
+    </div>
+
+    <div class="callout">
+      La normativa europea (Reg. CE 1760/2000 per i bovini; Reg. UE 1169/2011 per gli alimenti in generale) impone specifici obblighi di etichettatura per la carne.
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Elementi obbligatori — carne bovina</div>
+        <ul>
+          <li>Denominazione del prodotto (es. "carne bovina")</li>
+          <li>Paese di nascita dell'animale</li>
+          <li>Paese/i di ingrasso</li>
+          <li>Paese di macellazione + n° approvazione macello</li>
+          <li>Numero di riferimento/lotto (tracciabilità)</li>
+          <li>Stato fisico (fresca, refrigerata, congelata)</li>
+          <li>Peso netto</li>
+          <li>Data di scadenza o TMC</li>
+          <li>Condizioni di conservazione</li>
+          <li>Nome/ragione sociale e indirizzo operatore</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Informazioni facoltative o specifiche</div>
+        <ul>
+          <li>Razza (es. Chianina, Piemontese)</li>
+          <li>Tipo di allevamento (biologico, all'aperto)</li>
+          <li>Categoria: vitello, manzetta, manzo, toro ecc.</li>
+          <li>Taglio anatomico (es. filetto, costata)</li>
+          <li>Marchio DOP/IGP se certificato</li>
+          <li>Dichiarazione nutrizionale (obbligatoria dal 2016 per preimballati)</li>
+          <li>Indicazione allergeni</li>
+          <li>Bollino CE: ovale con sigla paese + n. stabilimento</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 11. DOP ─── -->
+  <section id="s11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <div class="section-title">Prosciutto di Parma DOP vs San Daniele DOP</div>
+    </div>
+
+    <div class="callout">
+      Entrambi sono prosciutti crudi italiani a Denominazione di Origine Protetta (DOP), prodotti con cosce di suini italiani, sale marino e <strong>senza additivi o conservanti</strong>.
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Elemento</th>
+            <th>Prosciutto di Parma DOP</th>
+            <th>Prosciutto di San Daniele DOP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Zona di produzione</td><td>Provincia di Parma (Emilia-Romagna), collina a est del T. Stirone</td><td>Comune di San Daniele del Friuli (Udine, Friuli-Venezia Giulia)</td></tr>
+          <tr><td>Razze suine</td><td>Razze italiane selezionate (Large White, Landrace, Duroc)</td><td>Stesse razze; suini nati e allevati esclusivamente in Italia</td></tr>
+          <tr><td>Peso coscia</td><td>≥ 10 kg con cotenna</td><td>≥ 10 kg; lo zampino (piedino) rimane attaccato</td></tr>
+          <tr><td>Piedino</td><td>Rimosso prima della lavorazione</td><td><strong>Mantenuto</strong> — caratteristica distintiva visiva</td></tr>
+          <tr><td>Forma</td><td>Tondeggiante ("a chitarra")</td><td>A chitarra schiacciata, piatta per pressatura</td></tr>
+          <tr><td>Pressatura</td><td>Non prevista</td><td><strong>Prevista:</strong> la coscia è pressata per distribuire il sale e compattare la carne</td></tr>
+          <tr><td>Sale</td><td>Sale marino secco, solo su cotenna e parte scoperta</td><td>Sale marino secco; massaggiatura tradizionale a mano</td></tr>
+          <tr><td>Stagionatura minima</td><td>12 mesi (dalla salatura)</td><td>13 mesi (dall'inizio lavorazione)</td></tr>
+          <tr><td>Stagionatura tipica</td><td>18–24 mesi (alcuni 30+ mesi)</td><td>13–16 mesi</td></tr>
+          <tr><td>Microclima</td><td>Aria collinare parmense, influenza flora specifica</td><td>Incontro di aria fredda alpina e calda adriatica → microclima unico</td></tr>
+          <tr><td>Marchio</td><td>Corona ducale a 5 punte impressa a fuoco</td><td>"SD" stilizzato impresso a fuoco</td></tr>
+          <tr><td>Ingredienti</td><td>Solo coscia suina + sale marino</td><td>Solo coscia suina + sale marino</td></tr>
+          <tr><td>Profilo sensoriale</td><td>Sapore dolce, delicato, poco salato; aroma fine e persistente; colore rosa-rosso uniforme con grasso bianco-rosato</td><td>Sapore leggermente più dolce e morbido, colore rosso vivo con grasso bianco; consistenza più compatta per la pressatura</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── 12. PROSCIUTTO COTTO ─── -->
+  <section id="s12">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <div class="section-title">Tipologie di prosciutto cotto in commercio</div>
+    </div>
+
+    <div class="callout">
+      In Italia il <strong>Decreto Ministeriale 21 settembre 2005</strong> definisce le categorie di prosciutto cotto in base alla qualità della materia prima e al processo produttivo.
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Materia prima</th>
+            <th>Ingredienti aggiuntivi consentiti</th>
+            <th style="background:#1a3d6e;">Umidità massima</th>
+            <th>Profilo sensoriale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge b-teal">Alta Qualità</span></td>
+            <td>Coscia intera disossata, senza difetti, peso ≥ 8 kg a crudo</td>
+            <td>Solo salamoia (acqua, sale, zuccheri, nitriti). <strong>NO</strong> polifosfati, NO proteine aggiunte, NO amidi, NO additivi tecnologici</td>
+            <td class="umidity-cell">≤ 75,5%</td>
+            <td>Sapore delicato e naturale, consistenza compatta simile alla carne, colore rosa uniforme, fette intere senza separazioni. Perdita di peso durante cottura ≥ 24%</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-gold">Scelto</span></td>
+            <td>Coscia intera o in pezzi uniti; accettanza difetti minori</td>
+            <td>Polifosfati consentiti in quantità limitata, aromi naturali, antiossidanti</td>
+            <td class="umidity-cell">≤ 78%</td>
+            <td>Qualità intermedia. Profilo aromatico dipende dagli aromi aggiunti. Consistenza leggermente meno compatta rispetto all'Alta Qualità</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-amber">Prosciutto cotto (standard)</span></td>
+            <td>Coscia suina anche in pezzi, con accettanza difetti</td>
+            <td>Polifosfati, proteine del latte o vegetali, amidi, aromi, addensanti consentiti</td>
+            <td class="umidity-cell">≤ 80%</td>
+            <td>Sapore meno intenso, leggermente artificioso; consistenza meno compatta; fette meno omogenee; possibili separazioni tra muscoli. Colore più pallido</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-white">Spalla cotta</span></td>
+            <td>Spalla suina (parte anteriore, non coscia) — materia prima più economica</td>
+            <td>Stesse categorie applicabili; polifosfati e aromi frequenti</td>
+            <td class="umidity-cell">≤ 80%</td>
+            <td>Sapore più intenso e robusto; consistenza meno uniforme; più grasso intermuscolare. Frequente nell'affettato da forno, tramezzini, panini</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:1rem;">
+      <strong>Perché l'umidità è importante?</strong> Una maggiore umidità residua indica che il prodotto è stato lavorato con più acqua (es. tramite zangolatura prolungata o iniezione di salamoia abbondante) e/o con l'aggiunta di addensanti e polifosfati che trattengono l'acqua nelle proteine. Un'umidità più bassa significa carne più "asciutta", più concentrata e nutriente. Il limite legale di umidità è quindi uno degli indicatori principali della <strong>qualità e della categoria</strong> del prosciutto cotto.
+    </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <div class="card-title">Come riconoscere la categoria al momento dell'acquisto</div>
+      <ul>
+        <li><strong>Etichetta:</strong> la categoria deve essere dichiarata chiaramente. "Alta Qualità" è la denominazione più pregiata.</li>
+        <li><strong>Lista ingredienti:</strong> più è lunga, più additivi contiene → categoria inferiore. Alta Qualità: solo coscia, acqua, sale, zucchero, nitriti.</li>
+        <li><strong>Prezzo:</strong> l'Alta Qualità costa significativamente di più per la qualità della materia prima e la minor resa di produzione.</li>
+        <li><strong>Aspetto al taglio:</strong> fetta compatta e omogenea nell'Alta Qualità; nelle qualità inferiori possono essere visibili i bordi di pezzi muscolari diversi uniti insieme.</li>
+        <li><strong>Umidità percepita:</strong> il prosciutto cotto di bassa qualità risulta spesso "bagnato" al taglio per l'elevata umidità residua.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Guida completa sulla carne · Scienze degli Alimenti · Uso didattico
+</footer>
+
+</body>
+</html>
